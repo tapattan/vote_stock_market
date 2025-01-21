@@ -89,7 +89,7 @@ if not st.session_state.get("has_voted", False):
     # ปุ่มสำหรับตัวเลือกการโหวต
     col1, col2 = st.columns(2)
     with col1:
-        if st.button("กระทิง 🐂", key="bull"):
+        if st.button("กระทิง 🦬", key="bull"):
             save_vote(current_date, question, "กระทิง")
             st.session_state["has_voted"] = True
             st.session_state["vote_choice"] = "กระทิง"
