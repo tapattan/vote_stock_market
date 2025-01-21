@@ -156,5 +156,5 @@ if st.session_state["has_voted"]:
         # รีเซ็ตค่า session_state และกลับไปหน้าเริ่มต้น
         st.session_state["has_voted"] = False
         st.session_state["vote_choice"] = None
-        
-        # st.experimental_rerun()
+
+        st.experimental_rerun()
