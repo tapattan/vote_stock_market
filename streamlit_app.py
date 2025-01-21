@@ -91,7 +91,9 @@ if not st.session_state["has_voted"]:
             save_vote(current_date, question, "กระทิง")
             st.session_state["has_voted"] = True
             st.session_state["vote_choice"] = "กระทิง"
-            st.experimental_rerun()
+
+            #st.experimental_rerun() fix bug กรณี deploy ขึ้นไป 
+
     with col2:
         if st.button("หมี 🐻", key="bear"):
             save_vote(current_date, question, "หมี")
