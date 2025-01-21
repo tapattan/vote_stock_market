@@ -91,15 +91,14 @@ if not st.session_state["has_voted"]:
             save_vote(current_date, question, "กระทิง")
             st.session_state["has_voted"] = True
             st.session_state["vote_choice"] = "กระทิง"
-
-            #st.experimental_rerun() fix bug กรณี deploy ขึ้นไป 
+            # st.experimental_rerun() fix bug กรณี deploy ขึ้นไป 
 
     with col2:
         if st.button("หมี 🐻", key="bear"):
             save_vote(current_date, question, "หมี")
             st.session_state["has_voted"] = True
             st.session_state["vote_choice"] = "หมี"
-            st.experimental_rerun()
+            # st.experimental_rerun()
 
 if st.session_state["has_voted"]:
     # แสดงผลโหวตของผู้ใช้
@@ -157,4 +156,5 @@ if st.session_state["has_voted"]:
         # รีเซ็ตค่า session_state และกลับไปหน้าเริ่มต้น
         st.session_state["has_voted"] = False
         st.session_state["vote_choice"] = None
-        st.experimental_rerun()
+        
+        # st.experimental_rerun()
