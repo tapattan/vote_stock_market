@@ -79,7 +79,9 @@ current_date = datetime.now().strftime("%Y-%m-%d")
 # โหลดข้อมูลโหวต
 votes_data = load_votes(current_date)
 
-if not st.session_state["has_voted"]:
+
+#if not st.session_state["has_voted"]:
+if not st.session_state.get("has_voted", False):
     # แสดงคำถาม
     st.subheader(f"คำถามสำหรับวันที่ {current_date}")
     st.write(question)
@@ -100,7 +102,8 @@ if not st.session_state["has_voted"]:
             st.session_state["vote_choice"] = "หมี"
             # st.experimental_rerun()
 
-if st.session_state["has_voted"]:
+#if st.session_state["has_voted"]:
+if st.session_state.get("has_voted", False):
     # แสดงผลโหวตของผู้ใช้
     st.subheader("ผลโหวตของคุณ")
     st.write(f"คุณโหวต: **{st.session_state['vote_choice']}**")
@@ -157,4 +160,5 @@ if st.session_state["has_voted"]:
         st.session_state["has_voted"] = False
         st.session_state["vote_choice"] = None
 
-        st.experimental_rerun()
+        # st.experimental_rerun()
+        # st.session_state.clear()
