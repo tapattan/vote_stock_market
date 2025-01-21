@@ -155,10 +155,10 @@ if st.session_state.get("has_voted", False):
         st.write("ยังไม่มีข้อมูลโหวตในระบบ")
 
     # ปุ่ม Reset
-    if st.button("back"):
-        # รีเซ็ตค่า session_state และกลับไปหน้าเริ่มต้น
-        st.session_state["has_voted"] = False
-        st.session_state["vote_choice"] = None
+    #if st.button("back"):
+    #    # รีเซ็ตค่า session_state และกลับไปหน้าเริ่มต้น
+    #    st.session_state["has_voted"] = False
+    #    st.session_state["vote_choice"] = None
 
-        # st.experimental_rerun()
-        # st.session_state.clear()
+    #    # st.experimental_rerun()
+    #    # st.session_state.clear()
